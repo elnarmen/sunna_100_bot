@@ -1,9 +1,9 @@
 from django.db import models
-from tinymce.models import HTMLField
+from markdownx.models import MarkdownxField
 
 
 class Post(models.Model):
-    text = HTMLField("Текст")
+    text = MarkdownxField()
     image = models.ImageField("Изображение")
 
     class Meta:
