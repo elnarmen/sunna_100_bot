@@ -33,9 +33,10 @@ def run_bot():
     chat_id = os.getenv("CHAT_ID")
     chat_id_for_logs = os.getenv("CHAT_ID_FOR_LOGS")
     posts = Post.objects.all()
-    hours_between_posts = (
-        Interval.objects.first() or 24
+    interval = (
+        Interval.objects.first()
     )  # set 24 hours by default if there is no Interval in the db
+    hours_between_posts = interval.hours if interval else 24
     seconds_between_posts = hours_between_posts * 3600
 
     if not posts.exists():
