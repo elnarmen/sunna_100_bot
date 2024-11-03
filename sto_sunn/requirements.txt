@@ -12,3 +12,6 @@ pillow==11.0.0
 pre_commit==4.0.1
 python-dotenv==1.0.1
 python-telegram-bot==13.7
+psycopg2-binary==2.9.10
+dj_database_url==2.3.0
+gunicorn==23.0.0
