@@ -1,9 +1,10 @@
 from django.db import models
+from tinymce.models import HTMLField
 
 
 class Post(models.Model):
-    text = models.TextField("Текст")
-    image = models.ImageField()
+    text = HTMLField("Текст")
+    image = models.ImageField("Изображение")
 
     class Meta:
         verbose_name = "Пост"
