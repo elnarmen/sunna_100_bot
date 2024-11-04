@@ -12,7 +12,7 @@ services:
     depends_on:
       - db
     env_file:
-      - /.env
+      - .env
     restart: always
   db:
     image: postgres:17.0-alpine
@@ -20,7 +20,7 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
     env_file:
-      - /.env
+      - .env
     ports:
       - "5432:5432"
     restart: always
