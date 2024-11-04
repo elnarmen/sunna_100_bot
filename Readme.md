@@ -56,11 +56,6 @@ docker exec sto_sunn_web python /app/sto_sunn/manage.py run_bot
 bash deploy.sh
 ```
 
-Далее запустите команду:
-```
-docker exec -it sto_sunn_web sh
-```
-
 Создайте супреюзера:
 ```
 docker exec -it sto_sunn_web python /app/sto_sunn/manage.py createsuperuser

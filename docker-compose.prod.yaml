@@ -7,6 +7,7 @@ services:
     command: sh -c "gunicorn --bind 0.0.0.0:8000 --chdir /app/sto_sunn/ sto_sunn.wsgi:application"
     volumes:
       - .:/app
+      - media_volume:/app/sto_sunn/media
     ports:
       - "8000:8000"
     depends_on:
@@ -14,6 +15,17 @@ services:
     env_file:
       - .env
     restart: always
+  nginx:
+    image: nginx:1.21-alpine
+    container_name: sto_sunn_nginx
+    volumes:
+      - media_volume:/app/sto_sunn/media
+      - ./nginx/nginx.conf:/etc/nginx/conf.d
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - web
   db:
     image: postgres:17.0-alpine
     container_name: sto_sunn_db
@@ -26,3 +38,5 @@ services:
     restart: always
 volumes:
   pgdata:
+  media_volume:
+  conf:
