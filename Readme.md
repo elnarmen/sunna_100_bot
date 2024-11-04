@@ -20,12 +20,12 @@ git clone https://github.com/elnarmen/sunna_100_bot.git
 
 Запустите <b>docker-compose</b>:
 ```
-docker-compose -f docker-compose.dev.yml up -d --build
+docker-compose -f docker-compose.dev.yaml up -d --build
 ```
 
 Дождитесь окончания установки и запустите миграции:
 ```
-docker-compose -f docker-compose.dev.yml exec web python /app/sto_sunn/manage.py migrate
+docker-compose -f docker-compose.dev.yaml exec web python /app/sto_sunn/manage.py migrate
 ```
 
 Создать супреюзера:
