@@ -41,4 +41,5 @@ services:
 volumes:
   pgdata:
   media_volume:
+  static_volume:
   conf:
