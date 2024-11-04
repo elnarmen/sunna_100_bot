@@ -17,7 +17,7 @@ services:
       - .env
     restart: always
   nginx:
-    image: nginx:1.21-alpine
+    image: nginx:1.27.2-alpine
     container_name: sto_sunn_nginx
     volumes:
       - media_volume:/app/sto_sunn/media
