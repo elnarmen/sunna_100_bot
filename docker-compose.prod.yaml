@@ -8,7 +8,7 @@ services:
     volumes:
       - .:/app
       - media_volume:/app/sto_sunn/media
-      - static_volume:/app/sto_sunn/static/
+      - static_volume:/app/sto_sunn/static
     ports:
       - "8000:8000"
     depends_on:
