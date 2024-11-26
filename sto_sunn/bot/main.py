@@ -27,7 +27,7 @@ class TelegramLogsHandler(logging.Handler):
 def escape_markdown_v2(text):
     url_pattern = r"[100 забытых Сунн]"
     parts = text.split(url_pattern)
-    parts[0] = re.sub(r"([-().])", r"\\\1", parts[0])
+    parts[0] = re.sub(r"([-().!])", r"\\\1", parts[0])
     return "[100 забытых Сунн]".join(parts)
 
 
